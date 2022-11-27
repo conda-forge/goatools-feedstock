@@ -1,5 +1,5 @@
 {% set name = "goatools" %}
-{% set version = "1.2.3" %}
+{% set version = "1.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/goatools-{{ version }}.tar.gz
-  sha256: 1b5635481221e42bf2d8efc4ebdca42cd7696b52f52ce5d32fe3eb29d447cdb2
+  sha256: 6c6e952b287bc9d4554684dc6e3145fa95e97e8e9c28e7a142faf22f68abacdb
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
