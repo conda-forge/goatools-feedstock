@@ -20,7 +20,7 @@ requirements:
     - python >=3.7
     - pip
     - pytest
-    - setuptools
+    - setuptools_scm
     - wheel
   run:
     - python >=3.7
@@ -31,9 +31,7 @@ requirements:
     - openpyxl
     - docopt
     - pydot
-    - pygraphviz
     - requests
-    - xlrd >=1.2.0
     - xlsxwriter
 
 test:
