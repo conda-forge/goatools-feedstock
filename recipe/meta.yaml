@@ -1,58 +1,52 @@
 {% set name = "goatools" %}
 {% set version = "1.3.1" %}
-{% set sha256 = "c25cb7b6044308d359a010fc55a9b9f2f58dd64e4e2afd181d22d665d781a3dc" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/goatools-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: c25cb7b6044308d359a010fc55a9b9f2f58dd64e4e2afd181d22d665d781a3dc
 
 build:
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . --use-pep517 -vv
 
 requirements:
   host:
-    - python >=3.7
-    - pip
-    - pytest
-    - setuptools_scm
+    - python
+    - setuptools
+    - setuptools-scm
+    - setuptools_scm_git_archive
     - wheel
+    - pip
   run:
-    - python >=3.7
+    - python
     - pandas
     - numpy
     - scipy
+    - xlsxwriter
     - statsmodels
     - openpyxl
     - docopt
     - pydot
     - requests
-    - xlsxwriter
 
 test:
   imports:
     - goatools
-    - goatools.obo_parser
-    - goatools.go_enrichment
-    - goatools.associations
   commands:
-    - find_enrichment.py -h
-    - map_to_slim.py -h
-    - plot_go_term.py -h
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/tanghaibao/goatools
-  summary: Python library to handle and find enriched Gene Ontology (GO) terms
+  home: http://github.com/tanghaibao/goatools
+  summary: Python scripts to find enrichment of GO terms
   license: BSD-2-Clause
-  license_family: BSD
   license_file: LICENSE
-  doc_url: https://pypi.org/project/goatools/
 
 extra:
   recipe-maintainers:
-    - hadim
+    - joshuazhuang7
