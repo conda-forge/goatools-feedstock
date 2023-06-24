@@ -56,7 +56,5 @@ about:
   doc_url: https://pypi.org/project/goatools/
 
 extra:
-  identifiers:
-    - doi:10.1038/s41598-018-28948-z
   recipe-maintainers:
     - hadim
