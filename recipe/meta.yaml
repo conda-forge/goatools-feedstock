@@ -19,10 +19,10 @@ requirements:
   host:
     - python >=3.6
     - pip
-    - setuptools-scm
     - pytest
   run:
     - python >=3.6
+    - setuptools
     - pandas
     - numpy
     - scipy
