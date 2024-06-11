@@ -15,7 +15,7 @@ build:
   noarch: python
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vvv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --no-cache-dir -vvv
 
 requirements:
   host:
@@ -32,6 +32,7 @@ requirements:
     - statsmodels
     - openpyxl
     - docopt
+    - ftpretty
     - pydot
     - requests
     - rich
@@ -54,7 +55,8 @@ about:
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  doc_url: https://pypi.org/project/goatools/
+  doc_url: https://pypi.org/project/goatools
+  dev_url: https://github.com/tanghaibao/goatools
 
 extra:
   recipe-maintainers:
