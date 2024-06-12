@@ -1,6 +1,6 @@
 {% set name = "goatools" %}
-{% set version = "1.4.8" %}
-{% set sha256 = "90da68361d566c479c3697183d9f5712c7ba8da67214a4a892d679644818277d" %}
+{% set version = "1.4.4" %}
+{% set sha256 = "599d3f84d7d9457b0c6c6ebbc09ffd68f273c4cca0c0ba7814a1a2d4c15632b9" %}
 
 package:
   name: {{ name }}
@@ -15,7 +15,7 @@ build:
   noarch: python
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --no-cache-dir -vvv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vvv
 
 requirements:
   host:
@@ -32,7 +32,6 @@ requirements:
     - statsmodels
     - openpyxl
     - docopt
-    - ftpretty
     - pydot
     - requests
     - rich
@@ -55,8 +54,7 @@ about:
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  doc_url: https://pypi.org/project/goatools
-  dev_url: https://github.com/tanghaibao/goatools
+  doc_url: https://pypi.org/project/goatools/
 
 extra:
   recipe-maintainers:
