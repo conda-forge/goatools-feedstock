@@ -9,7 +9,9 @@ Package license: BSD-2-Clause
 
 Summary: Python library to handle and find enriched Gene Ontology (GO) terms
 
-Documentation: https://pypi.org/project/goatools/
+Development: https://github.com/tanghaibao/goatools
+
+Documentation: https://pypi.org/project/goatools
 
 Current build status
 ====================
