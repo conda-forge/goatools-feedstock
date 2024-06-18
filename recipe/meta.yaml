@@ -1,6 +1,6 @@
 {% set name = "goatools" %}
-{% set version = "1.4.9" %}
-{% set sha256 = "549039acb2e9a743a83b1fbad46ff9a5ba050277771c54b5f01bbcc0efe2097f" %}
+{% set version = "1.4.10" %}
+{% set sha256 = "abc24836cb21bdd3511757bafd70fd7e1d53f6e81aaa8bcb3979a36fda56781c" %}
 
 package:
   name: {{ name }}
