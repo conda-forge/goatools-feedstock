@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/goatools-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/goatools-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
@@ -19,12 +19,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - pytest
     - setuptools-scm
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - setuptools
     - pandas
     - numpy
@@ -39,6 +39,8 @@ requirements:
     - xlsxwriter
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - goatools
     - goatools.obo_parser
