@@ -21,21 +21,22 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - pytest
+    - setuptools
     - setuptools-scm
+    - setuptools_scm_git_archive
   run:
     - python >={{ python_min }}
     - setuptools
-    - pandas
-    - numpy
-    - scipy
-    - statsmodels
-    - openpyxl
-    - docopt
+    - docopt-ng
     - ftpretty
+    - numpy
+    - openpyxl
+    - pandas
     - pydot
     - requests
     - rich
+    - scipy
+    - statsmodels
     - xlsxwriter
 
 test:
@@ -52,13 +53,13 @@ test:
     - plot_go_term.py -h
 
 about:
-  home: https://github.com/tanghaibao/goatools
-  summary: Python library to handle and find enriched Gene Ontology (GO) terms
-  license: BSD-2-Clause
+  home: "https://github.com/tanghaibao/goatools"
+  summary: "Python library to handle and find enriched Gene Ontology (GO) terms."
+  license: "BSD-2-Clause"
   license_family: BSD
   license_file: LICENSE
-  doc_url: https://pypi.org/project/goatools
-  dev_url: https://github.com/tanghaibao/goatools
+  doc_url: "https://github.com/tanghaibao/goatools/blob/v{{ version }}/README.md"
+  dev_url: "https://github.com/tanghaibao/goatools"
 
 extra:
   recipe-maintainers:
