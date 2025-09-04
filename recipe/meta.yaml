@@ -1,6 +1,6 @@
 {% set name = "goatools" %}
-{% set version = "1.4.12" %}
-{% set sha256 = "24a2c5dd7859a4ad4b7dbeff26fed44fc964e57c95b06cd852e4b08f78b097f1" %}
+{% set version = "1.5.1" %}
+{% set sha256 = "41f4fc61a004a0376f1d6c3b1811f32f04a4118ffda38f932a43e6030c817249" %}
 
 package:
   name: {{ name }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
