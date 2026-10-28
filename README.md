@@ -11,7 +11,7 @@ Summary: Python library to handle and find enriched Gene Ontology (GO) terms.
 
 Development: https://github.com/tanghaibao/goatools
 
-Documentation: https://github.com/tanghaibao/goatools/blob/v1.6.7/README.md
+Documentation: https://github.com/tanghaibao/goatools/blob/v1.6.8/README.md
 
 Current build status
 ====================
