@@ -1,13 +1,13 @@
 {% set name = "goatools" %}
-{% set version = "1.6.4" %}
-{% set sha256 = "5d6ed92199e1b81f012c8e991a9b6ddaed591d30bfa09855bd1d2ac2f7958d46" %}
+{% set version = "1.6.7" %}
+{% set sha256 = "e5c74e8317d46ba5c4f93f7bd883458e64d42a3731b7fe41b89db1ed90b50819" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/goatools-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/g/goatools/goatools-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -15,6 +15,14 @@ build:
   noarch: python
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  entry_points:
+    - goatools = goatools.cli.main:main
+    - find_enrichment.py = goatools.cli.find_enrichment:main
+    - go_plot.py = goatools.cli.gosubdag_plot:main
+    - map_to_slim.py = goatools.cli.map_to_slim:main
+    - wr_hier.py = goatools.cli.wr_hierarchy:main
+    - plot_go_term.py = goatools.cli.plot_go_term:main
+    - ncbi_gene_results_to_python.py = goatools.cli.ncbi_gene_results_to_python:main
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --no-cache-dir -vvv
 
 requirements:
@@ -22,12 +30,10 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools
-    - setuptools-scm
-    - setuptools_scm_git_archive
+    - setuptools-scm >=8
   run:
     - python >={{ python_min }}
     - setuptools
-    - docopt-ng
     - ftpretty
     - numpy
     - openpyxl
