@@ -1,13 +1,13 @@
 {% set name = "goatools" %}
-{% set version = "1.6.7" %}
-{% set sha256 = "e5c74e8317d46ba5c4f93f7bd883458e64d42a3731b7fe41b89db1ed90b50819" %}
+{% set version = "1.6.8" %}
+{% set sha256 = "3a318a440ff973d93c94bb6f530a8f342ed07d76e54b579578f44d983fcd9e40" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/g/goatools/goatools-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/g/goatools/goatools-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
